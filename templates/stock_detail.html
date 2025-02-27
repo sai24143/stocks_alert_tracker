@@ -1,0 +1,8 @@
+<h1>{{ stock.symbol }}</h1>
+<p>Price: {{ stock.price }}</p>
+<a href="{% url 'stock-update' stock.pk %}">Edit</a>
+<form action="{% url 'stock-delete' stock.pk %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+</form>
+<a href="{% url 'stock-list' %}">Back to List</a>
